@@ -1,182 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🎨 Sticker Shop</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎨 Sticker Shop</title>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  background: #f8f9fa;
-  color: #333;
-}
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: #f8f9fa;
+      color: #333;
+    }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.2rem 2rem;
-  background: #fff;
-  border-bottom: 1px solid #e9ecef;
-  position: sticky;
-  top: 0;
-}
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 2rem;
+      background: #fff;
+      border-bottom: 1px solid #e9ecef;
+      position: sticky;
+      top: 0;
+    }
 
-#cart-btn {
-  background: #111;
-  color: #fff;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  cursor: pointer;
-}
+    #cart-btn {
+      background: #111;
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
 
-main {
-  max-width: 1200px;
-  margin: auto;
-  padding: 2rem;
-}
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem;
+    }
 
-.sticker-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
-  gap: 1.5rem;
-}
+    .sticker-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
 
-.sticker-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 1rem;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,.07);
-}
+    .sticker-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .07);
+    }
 
-.sticker-card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 8px;
-}
+    .sticker-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
 
-.sticker-card button {
-  width: 100%;
-  margin-top: .6rem;
-  background: #4CAF50;
-  color: #fff;
-  border: none;
-  padding: .5rem;
-  border-radius: 6px;
-  cursor: pointer;
-}
+    .sticker-card button {
+      width: 100%;
+      margin-top: .6rem;
+      background: #4CAF50;
+      color: #fff;
+      border: none;
+      padding: .5rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
 
-/* Modal */
-.modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    /* Modal */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-.hidden { display:none; }
+    .hidden {
+      display: none;
+    }
 
-.modal-content {
-  background: #fff;
-  padding: 1.5rem;
-  width: 90%;
-  max-width: 400px;
-  border-radius: 12px;
-}
+    .modal-content {
+      background: #fff;
+      padding: 1.5rem;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 12px;
+    }
 
-.modal-content ul {
-  list-style: none;
-  margin: 1rem 0;
-}
+    .modal-content ul {
+      list-style: none;
+      margin: 1rem 0;
+    }
 
-.modal-content li {
-  display: flex;
-  justify-content: space-between;
-  padding: .4rem 0;
-  border-bottom: 1px solid #eee;
-}
+    .modal-content li {
+      display: flex;
+      justify-content: space-between;
+      padding: .4rem 0;
+      border-bottom: 1px solid #eee;
+    }
 
-.modal-actions {
-  display: flex;
-  gap: .7rem;
-}
+    .modal-actions {
+      display: flex;
+      gap: .7rem;
+    }
 
-.modal-actions button {
-  flex: 1;
-  padding: .6rem;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-}
+    .modal-actions button {
+      flex: 1;
+      padding: .6rem;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+    }
 
-#whatsapp-btn { background:#25D366; color:#fff; }
-</style>
+    #whatsapp-btn {
+      background: #25D366;
+      color: #fff;
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <h1>🎨 Sticker Shop</h1>
-  <button id="cart-btn">🛒 Cart (<span id="cart-count">0</span>)</button>
-</header>
+  <header>
+    <h1>🎨 Sticker Shop</h1>
+    <button id="cart-btn">🛒 Cart (<span id="cart-count">0</span>)</button>
+  </header>
 
-<main>
-  <div class="sticker-grid" id="sticker-grid"></div>
-</main>
+  <main>
+    <div class="sticker-grid" id="sticker-grid"></div>
+  </main>
 
-<div id="cart-modal" class="modal hidden">
-  <div class="modal-content">
-    <h2>Your Cart</h2>
-    <ul id="cart-items"></ul>
-    <p id="cart-total"></p>
+  <div id="cart-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Your Cart</h2>
+      <ul id="cart-items"></ul>
+      <p id="cart-total"></p>
 
-    <div class="modal-actions">
-      <button id="whatsapp-btn">📱 WhatsApp</button>
-      <button id="close-modal">Close</button>
+      <div class="modal-actions">
+        <button id="whatsapp-btn">📱 WhatsApp</button>
+        <button id="close-modal">Close</button>
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-// DATA
-const stickers = [
- {id:1,name:"Happy Cat",price:2.5},
- {id:2,name:"Cool Dog",price:2.5},
- {id:3,name:"Pizza Slice",price:2},
- {id:4,name:"Unicorn",price:3.5},
- {id:5,name:"Rocket",price:3},
- {id:6,name:"Coffee",price:2.25},
- {id:7,name:"Avocado",price:2.5},
- {id:8,name:"Lightning",price:2.25},
-];
+  <script>
+    // DATA
+    const stickers = [
+      { id: 1, name: "Happy Cat", price: 2.5 },
+      { id: 2, name: "Cool Dog", price: 2.5 },
+      { id: 3, name: "Pizza Slice", price: 2 },
+      { id: 4, name: "Unicorn", price: 3.5 },
+      { id: 5, name: "Rocket", price: 3 },
+      { id: 6, name: "Coffee", price: 2.25 },
+      { id: 7, name: "Avocado", price: 2.5 },
+      { id: 8, name: "Lightning", price: 2.25 },
+    ];
 
-let cart = [];
+    let cart = [];
 
-// DOM
-const grid = document.getElementById("sticker-grid");
-const cartBtn = document.getElementById("cart-btn");
-const cartModal = document.getElementById("cart-modal");
-const cartItems = document.getElementById("cart-items");
-const cartTotal = document.getElementById("cart-total");
-const cartCount = document.getElementById("cart-count");
+    // DOM
+    const grid = document.getElementById("sticker-grid");
+    const cartBtn = document.getElementById("cart-btn");
+    const cartModal = document.getElementById("cart-modal");
+    const cartItems = document.getElementById("cart-items");
+    const cartTotal = document.getElementById("cart-total");
+    const cartCount = document.getElementById("cart-count");
 
-// RENDER STICKERS
-function renderStickers(){
-  grid.innerHTML="";
-  stickers.forEach(s=>{
-    grid.innerHTML+=`
+    // RENDER STICKERS
+    function renderStickers() {
+      grid.innerHTML = "";
+      stickers.forEach(s => {
+        grid.innerHTML += `
       <div class="sticker-card">
         <img src="https://placehold.co/200x150?text=${encodeURIComponent(s.name)}">
         <h3>${s.name}</h3>
@@ -184,55 +190,56 @@ function renderStickers(){
         <button onclick="addToCart(${s.id})">Add</button>
       </div>
     `;
-  });
-}
+      });
+    }
 
-// ADD CART
-function addToCart(id){
-  let item = cart.find(i=>i.id===id);
-  if(item) item.qty++;
-  else cart.push({...stickers.find(s=>s.id===id), qty:1});
-  updateCount();
-}
+    // ADD CART
+    function addToCart(id) {
+      let item = cart.find(i => i.id === id);
+      if (item) item.qty++;
+      else cart.push({ ...stickers.find(s => s.id === id), qty: 1 });
+      updateCount();
+    }
 
-function updateCount(){
-  cartCount.textContent = cart.reduce((a,b)=>a+b.qty,0);
-}
+    function updateCount() {
+      cartCount.textContent = cart.reduce((a, b) => a + b.qty, 0);
+    }
 
-// CART MODAL
-cartBtn.onclick=()=>{
-  renderCart();
-  cartModal.classList.remove("hidden");
-};
+    // CART MODAL
+    cartBtn.onclick = () => {
+      renderCart();
+      cartModal.classList.remove("hidden");
+    };
 
-document.getElementById("close-modal").onclick=()=>{
-  cartModal.classList.add("hidden");
-};
+    document.getElementById("close-modal").onclick = () => {
+      cartModal.classList.add("hidden");
+    };
 
-function renderCart(){
-  cartItems.innerHTML="";
-  let total=0;
-  cart.forEach(i=>{
-    total+=i.qty*i.price;
-    cartItems.innerHTML+=`
-      <li><span>${i.name} x${i.qty}</span><span>$${(i.qty*i.price).toFixed(2)}</span></li>
+    function renderCart() {
+      cartItems.innerHTML = "";
+      let total = 0;
+      cart.forEach(i => {
+        total += i.qty * i.price;
+        cartItems.innerHTML += `
+      <li><span>${i.name} x${i.qty}</span><span>$${(i.qty * i.price).toFixed(2)}</span></li>
     `;
-  });
-  cartTotal.textContent = `Total: $${total.toFixed(2)}`;
-}
+      });
+      cartTotal.textContent = `Total: $${total.toFixed(2)}`;
+    }
 
-// WHATSAPP SHARE
-document.getElementById("whatsapp-btn").onclick=()=>{
-  if(!cart.length) return alert("Cart empty");
-  let msg="Sticker Order%0A%0A";
-  cart.forEach(i=>{
-    msg+=`${i.name} x${i.qty} = $${(i.qty*i.price).toFixed(2)}%0A`;
-  });
-  window.open(`https://wa.me/?text=${msg}`);
-};
+    // WHATSAPP SHARE
+    document.getElementById("whatsapp-btn").onclick = () => {
+      if (!cart.length) return alert("Cart empty");
+      let msg = "Sticker Order%0A%0A";
+      cart.forEach(i => {
+        msg += `${i.name} x${i.qty} = $${(i.qty * i.price).toFixed(2)}%0A`;
+      });
+      window.open(`https://wa.me/?text=${msg}`);
+    };
 
-renderStickers();
-</script>
+    renderStickers();
+  </script>
 
 </body>
+
 </html>
