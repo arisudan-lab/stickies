@@ -3,24 +3,106 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Order</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📦 New Order</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+            background: #f9f9f9;
+        }
+
+        h2 {
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .customer-info {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        .customer-info p {
+            margin: 5px 0;
+            font-size: 1.1em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        li {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        #total {
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: right;
+            margin-top: 20px;
+            color: #2c3e50;
+        }
+    </style>
 </head>
 
 <body>
-    <h2>Order Details</h2>
+    <h2>🛒 Order Receipt</h2>
+
+    <div class="customer-info">
+        <p><strong>👤 Name:</strong> <span id="cust-name"></span></p>
+        <p><strong>📞 Phone:</strong> <span id="cust-phone"></span></p>
+    </div>
+
+    <h3>Items:</h3>
     <ul id="list"></ul>
     <p id="total"></p>
 
     <script>
+        // 1. Get parameters from URL
         const params = new URLSearchParams(location.search);
-        const cart = JSON.parse(atob(params.get("c")));
-        let sum = 0;
-        cart.forEach(i => {
-            sum += i.qty * 10;
-            list.innerHTML += `<li>${i.name} x${i.qty} = ₹${i.qty * 10}</li>`;
-        });
-        total.innerText = "Total: ₹" + sum;
+
+        // 2. Display Name and Phone
+        // We use "No Name" as a fallback if the data is missing
+        document.getElementById("cust-name").innerText = params.get("name") || "Guest";
+        document.getElementById("cust-phone").innerText = params.get("phone") || "Not Provided";
+
+        // 3. Decode and Display Cart
+        try {
+            const cart = JSON.parse(atob(params.get("c")));
+            const list = document.getElementById("list");
+            const total = document.getElementById("total");
+
+            let sum = 0;
+            cart.forEach(i => {
+                const itemTotal = i.qty * 10;
+                sum += itemTotal;
+                list.innerHTML += `
+                <li>
+                    <span>${i.name} <small>(x${i.qty})</small></span>
+                    <span>₹${itemTotal}</span>
+                </li>`;
+            });
+            total.innerText = "Total Payable: ₹" + sum;
+
+        } catch (e) {
+            document.body.innerHTML = "<h3>⚠️ Invalid or Empty Order Link</h3>";
+        }
     </script>
 </body>
 

@@ -200,6 +200,31 @@ main {
     background: #e9ecef;
 }
 
+/* ... existing styles ... */
+
+/* NEW: Customer Input Styling */
+.customer-inputs {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.customer-inputs input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.customer-inputs input:focus {
+    border-color: #4CAF50;
+    /* Highlights green when typing */
+}
+
 /* MOBILE */
 @media (max-width: 600px) {
     header {

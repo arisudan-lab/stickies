@@ -122,12 +122,58 @@ document.getElementById("clear-cart-btn").onclick = () => {
     }
 };
 
-// SHARE CART AS LINK
-document.getElementById("whatsapp-btn").onclick = () => {
-    if (!cart.length) return alert("Cart empty");
-    const data = btoa(JSON.stringify(cart));
-    const link = `${window.location.origin}/cart.html?c=${data}`; // Adjusted for better relative linking
-    window.open(`https://wa.me/?text=${encodeURIComponent(link)}`);
+document.getElementById("whatsapp-btn").onclick = async () => {
+    if (cart.length === 0) return alert("Cart is empty!");
+
+    // 1. Get Inputs (Safely handle if they exist or not)
+    const nameInput = document.getElementById("customer-name");
+    const phoneInput = document.getElementById("customer-phone");
+
+    const name = nameInput ? nameInput.value.trim() : "";
+    const phone = phoneInput ? phoneInput.value.trim() : "";
+
+    // 2. Validate (Only if inputs exist)
+    if (nameInput && (!name || !phone)) {
+        alert("Please enter your Name and Phone Number.");
+        return;
+    }
+
+    // 3. Generate the Link
+    const cartData = btoa(JSON.stringify(cart));
+    const link = `${window.location.origin}/cart.html?c=${cartData}&name=${encodeURIComponent(name)}&phone=${encodeURIComponent(phone)}`;
+
+    // 4. Detect OS
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isDesktop = /windows|macintosh|linux/.test(userAgent);
+    const isAndroid = /android/.test(userAgent);
+
+    // 5. Logic: Desktop vs Mobile
+    if (isDesktop && !isAndroid) {
+        // --- DESKTOP (Windows, Mac, Linux) -> COPY LINK ---
+        try {
+            await navigator.clipboard.writeText(link);
+            alert("✅ Link copied to clipboard!\nYou can now paste it anywhere.");
+        } catch (err) {
+            prompt("Copy this link:", link); // Fallback if auto-copy fails
+        }
+
+    } else {
+        // --- ANDROID / MOBILE -> OPEN SHARE SHEET ---
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: 'New Order',
+                    text: `📦 New Order from ${name}\nTotal: ₹${cart.reduce((a, b) => a + (b.qty * PRICE), 0)}\n`,
+                    url: link
+                });
+            } catch (err) {
+                console.log("Share closed");
+            }
+        } else {
+            // Old Android/iPhone fallback: Open WhatsApp directly
+            window.open(`https://wa.me/?text=${encodeURIComponent(link)}`);
+        }
+    }
 };
 
 // OPEN PREVIEW MODAL
