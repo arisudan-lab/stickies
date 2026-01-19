@@ -85,7 +85,10 @@ main {
     object-fit: contain;
     padding: 10px;
     border-radius: 8px;
-    background: #e9ecef;
+    /* Correct way to set a background image */
+    background-image: url('stikerbg.png'); 
+    background-size: cover;
+    background-position: center;
 }
 
 .sticker-card h3 {
