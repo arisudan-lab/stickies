@@ -296,3 +296,66 @@ main {
 .danger-btn:hover {
     background: #cc0000 !important;
 }
+
+/* Slider Logic */
+.slider-wrapper {
+    overflow: hidden; /* Hide the second panel until it slides in */
+    padding: 0 !important;
+    max-width: 420px;
+}
+
+.cart-slider {
+    display: flex;
+    width: 200%; /* Two panels side-by-side */
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cart-panel {
+    width: 50%; /* Each panel takes half of the 200% width */
+    padding: 1.5rem;
+    flex-shrink: 0;
+}
+
+/* Slide state */
+.cart-slider.slide-active {
+    transform: translateX(-50%);
+}
+
+/* Extended Form Styles */
+.extended input, .extended textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    font-family: inherit;
+}
+
+.receipt-share-box {
+    background: #f1f3f5;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.receipt-share-box p { font-size: 12px; margin-bottom: 5px; color: #666; }
+
+.link-group {
+    display: flex;
+    gap: 5px;
+}
+
+#receipt-url-display {
+    flex: 1;
+    font-size: 11px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    background: #fff;
+}
+
+#copy-link-btn {
+    width: 40px !important;
+    padding: 5px !important;
+    background: #333;
+    color: white;
+}

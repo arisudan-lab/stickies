@@ -8,45 +8,51 @@ const cartCount = document.getElementById("cart-count");
 const cartModal = document.getElementById("cart-modal");
 const cartItems = document.getElementById("cart-items");
 const cartTotal = document.getElementById("cart-total");
+
+// Modal/Slider Elements
+const slider = document.getElementById("cart-slider");
+const nextBtn = document.getElementById("go-to-info-btn");
+const backBtn = document.getElementById("back-to-items");
+const receiptUrlInput = document.getElementById("receipt-url-display");
+
+// Preview Elements
 const previewModal = document.getElementById("preview-modal");
 const previewImg = document.getElementById("preview-img");
 const previewTitle = document.getElementById("preview-title");
 const previewPrice = document.getElementById("preview-price");
 const previewAddBtn = document.getElementById("preview-add-btn");
-const closePreview = document.getElementById("close-preview");
 
-// LOAD PRODUCTS
+// 1. LOAD PRODUCTS
 fetch("./products.json")
     .then(r => r.json())
     .then(data => {
         products = data;
         renderProducts();
     })
-    .catch(err => console.error("Error loading products. Ensure you are running on a local server.", err));
+    .catch(err => console.error("Error loading products:", err));
 
-// RENDER PRODUCTS
+// 2. RENDER PRODUCTS
 function renderProducts() {
     grid.innerHTML = "";
     products.forEach(p => {
         grid.innerHTML += `
-    <div class="sticker-card">
-        <img src="${p.image}" onclick="openPreview(${p.id})" style="cursor: pointer;">
-        <h3>${p.name}</h3>
-        <p class="price">₹${p.price}</p> 
-        <button onclick="addToCart(${p.id})">Add to Cart</button>
-    </div>
-    `;
+        <div class="sticker-card" onclick="openPreview(${p.id})">
+            <img src="${p.image}">
+            <h3>${p.name}</h3>
+            <p class="price">₹${p.price}</p> 
+            <button onclick="event.stopPropagation(); addToCart(${p.id})">Add to Cart</button>
+        </div>`;
     });
 }
 
-// ADD TO CART
+// 3. CART LOGIC
 function addToCart(id) {
     let item = cart.find(i => i.id === id);
     if (item) item.qty++;
-    else cart.push({
-        ...products.find(p => p.id === id),
-        qty: 1
-    });
+    else {
+        const p = products.find(p => p.id === id);
+        cart.push({ ...p, qty: 1 });
+    }
     updateCount();
 }
 
@@ -54,28 +60,12 @@ function updateCount() {
     cartCount.textContent = cart.reduce((a, b) => a + b.qty, 0);
 }
 
-// CART MODAL
-cartBtn.onclick = () => {
+function removeFromCart(id) {
+    cart = cart.filter(item => item.id !== id);
+    updateCount();
     renderCart();
-    cartModal.classList.remove("hidden");
-};
+}
 
-// CLOSE MODAL LOGIC
-
-// 1. Close when clicking the "X"
-document.getElementById("close-modal-x").onclick = () => {
-    cartModal.classList.add("hidden");
-};
-
-// 2. Close when clicking outside the modal box
-cartModal.onclick = (event) => {
-    // If the element clicked IS the dark overlay (and not the white box inside)
-    if (event.target === cartModal) {
-        cartModal.classList.add("hidden");
-    }
-};
-
-// RENDER CART 
 function renderCart() {
     cartItems.innerHTML = "";
     let total = 0;
@@ -87,124 +77,112 @@ function renderCart() {
     }
 
     cart.forEach(i => {
-        const itemTotal = i.qty * i.price; // Use item's own price
+        const itemTotal = i.qty * i.price;
         total += itemTotal;
         cartItems.innerHTML += `
-    <li>
-        <div class="cart-item-info">
-            <span>${i.name} <small style="color:#666">x${i.qty}</small></span>
-        </div>
-        <div class="cart-item-actions">
-            <strong>₹${itemTotal}</strong>
-            <button class="remove-btn" onclick="removeFromCart(${i.id})" title="Remove Item">×</button>
-        </div>
-    </li>
-    `;
+        <li>
+            <div class="cart-item-info">
+                <span>${i.name} <small style="color:#666">x${i.qty}</small></span>
+            </div>
+            <div class="cart-item-actions">
+                <strong>₹${itemTotal}</strong>
+                <button class="remove-btn" onclick="removeFromCart(${i.id})">×</button>
+            </div>
+        </li>`;
     });
-
     cartTotal.textContent = `Total: ₹${total}`;
 }
 
-// REMOVE SINGLE ITEM 
-function removeFromCart(id) {
-    cart = cart.filter(item => item.id !== id);
-
-    updateCount();
+// 4. NAVIGATION & SLIDER LOGIC
+cartBtn.onclick = () => {
     renderCart();
+    slider.classList.remove("slide-active"); // Reset to first panel
+    cartModal.classList.remove("hidden");
+};
+
+nextBtn.onclick = () => {
+    if (cart.length === 0) return alert("Your cart is empty!");
+    slider.classList.add("slide-active");
+    updateReceiptLink();
+};
+
+backBtn.onclick = () => {
+    slider.classList.remove("slide-active");
+};
+
+// 5. RECEIPT & SHARING LOGIC
+function updateReceiptLink() {
+    const name = document.getElementById("customer-name").value || "Customer";
+    const phone = document.getElementById("customer-phone").value || "";
+    const cartData = btoa(JSON.stringify(cart));
+    
+    // Construct link
+    const link = `${window.location.origin}/cart.html?c=${cartData}&name=${encodeURIComponent(name)}&phone=${encodeURIComponent(phone)}`;
+    receiptUrlInput.value = link;
 }
 
+document.getElementById("copy-link-btn").onclick = async () => {
+    try {
+        await navigator.clipboard.writeText(receiptUrlInput.value);
+        alert("Link copied to clipboard!");
+    } catch (err) {
+        alert("Failed to copy.");
+    }
+};
+
+document.getElementById("whatsapp-btn").onclick = async () => {
+    updateReceiptLink();
+    const link = receiptUrlInput.value;
+    const name = document.getElementById("customer-name").value || "Customer";
+
+    if (navigator.share) {
+        try {
+            await navigator.share({
+                title: 'Stikies Order',
+                text: `📦 New Order from ${name}\n`,
+                url: link
+            });
+        } catch (err) { console.log("Share cancelled"); }
+    } else {
+        window.open(`https://wa.me/?text=${encodeURIComponent(link)}`);
+    }
+};
+
+// 6. MODAL CLOSING LOGIC
+document.getElementById("close-modal-x").onclick = () => cartModal.classList.add("hidden");
+
+window.onclick = (event) => {
+    if (event.target == cartModal) cartModal.classList.add("hidden");
+    if (event.target == previewModal) previewModal.classList.add("hidden");
+};
+
+// 7. PREVIEW MODAL
+function openPreview(id) {
+    const product = products.find(p => p.id === id);
+    previewImg.src = product.image;
+    previewTitle.textContent = product.name;
+    previewPrice.textContent = product.price;
+    previewAddBtn.onclick = () => {
+        addToCart(id);
+        previewModal.classList.add("hidden");
+    };
+    previewModal.classList.remove("hidden");
+}
+
+document.getElementById("close-preview").onclick = () => previewModal.classList.add("hidden");
 
 document.getElementById("clear-cart-btn").onclick = () => {
-    if (confirm("Are you sure you want to empty the cart?")) {
+    if (confirm("Empty cart?")) {
         cart = [];
         updateCount();
         renderCart();
     }
 };
 
-document.getElementById("whatsapp-btn").onclick = async () => {
-    if (cart.length === 0) return alert("Cart is empty!");
-
-    // 1. Get Inputs (Safely handle if they exist or not)
-    const nameInput = document.getElementById("customer-name");
-    const phoneInput = document.getElementById("customer-phone");
-
-    const name = nameInput ? nameInput.value.trim() : "";
-    const phone = phoneInput ? phoneInput.value.trim() : "";
-
-    // 2. Validate (Only if inputs exist)
-    if (nameInput && (!name || !phone)) {
-        alert("Please enter your Name and Phone Number.");
-        return;
-    }
-
-    // 3. Generate the Link
-    const cartData = btoa(JSON.stringify(cart));
-    const link = `${window.location.origin}/cart.html?c=${cartData}&name=${encodeURIComponent(name)}&phone=${encodeURIComponent(phone)}`;
-
-    // 4. Detect OS
-    const userAgent = navigator.userAgent.toLowerCase();
-    const isDesktop = /windows|macintosh|linux/.test(userAgent);
-    const isAndroid = /android/.test(userAgent);
-
-    // 5. Logic: Desktop vs Mobile
-    if (isDesktop && !isAndroid) {
-        // --- DESKTOP (Windows, Mac, Linux) -> COPY LINK ---
-        try {
-            await navigator.clipboard.writeText(link);
-            alert("✅ Link copied to clipboard!\nYou can now paste it anywhere.");
-        } catch (err) {
-            prompt("Copy this link:", link); // Fallback if auto-copy fails
-        }
-
-    } else {
-        // --- ANDROID / MOBILE -> OPEN SHARE SHEET ---
-        if (navigator.share) {
-            try {
-                await navigator.share({
-                    title: 'New Order',
-                    text: `📦 New Order from ${name}\nTotal: ₹${cart.reduce((a, b) => a + (b.qty * b.price), 0)}\n`,
-                    url: link
-                });
-            } catch (err) {
-                console.log("Share closed");
-            }
-        } else {
-            // Old Android/iPhone fallback: Open WhatsApp directly
-            window.open(`https://wa.me/?text=${encodeURIComponent(link)}`);
-        }
-    }
-};
-
-// OPEN PREVIEW MODAL
-function openPreview(id) {
-    const product = products.find(p => p.id === id);
-
-    // Fill data
-    previewImg.src = product.image;
-    previewTitle.textContent = product.name;
-    previewPrice.textContent = product.price;
-
-    // Set the "Add to Cart" button action inside the modal
-    previewAddBtn.onclick = () => {
-        addToCart(id);
-        previewModal.classList.add("hidden"); // Optional: Close modal after adding
-    };
-
-    previewModal.classList.remove("hidden");
-}
-
-// CLOSE PREVIEW MODAL
-closePreview.onclick = () => {
-    previewModal.classList.add("hidden");
-};
-
-// Close modal if clicking outside the white box
-window.onclick = (event) => {
-    if (event.target == previewModal) {
-        previewModal.classList.add("hidden");
-    }
-    if (event.target == cartModal) {
-        cartModal.classList.add("hidden");
-    }
+document.getElementById("place-order-btn").onclick = () => {
+    alert("Order data logged to console!");
+    console.log("Admin Payload:", {
+        customer: document.getElementById("customer-name").value,
+        cart: cart
+    });
 };

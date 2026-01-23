@@ -7,7 +7,9 @@
   <title>Stikies</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="style.css">
-<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23ff6600" viewBox="0 0 16 16"><path d="M2.5 1A1.5 1.5 0 0 0 1 2.5v11A1.5 1.5 0 0 0 2.5 15h6.086a1.5 1.5 0 0 0 1.06-.44l4.915-4.914A1.5 1.5 0 0 0 15 8.586V2.5A1.5 1.5 0 0 0 13.5 1zm6 8.5a1 1 0 0 1 1-1h4.396a.25.25 0 0 1 .177.427l-5.146 5.146a.25.25 0 0 1-.427-.177z"/></svg>'></head>
+  <link rel="icon" type="image/svg+xml"
+    href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23ff6600" viewBox="0 0 16 16"><path d="M2.5 1A1.5 1.5 0 0 0 1 2.5v11A1.5 1.5 0 0 0 2.5 15h6.086a1.5 1.5 0 0 0 1.06-.44l4.915-4.914A1.5 1.5 0 0 0 15 8.586V2.5A1.5 1.5 0 0 0 13.5 1zm6 8.5a1 1 0 0 1 1-1h4.396a.25.25 0 0 1 .177.427l-5.146 5.146a.25.25 0 0 1-.427-.177z"/></svg>'>
+</head>
 
 <body>
 
@@ -29,31 +31,54 @@
   </main>
 
   <div class="modal hidden" id="cart-modal">
-    <div class="modal-content">
+    <div class="modal-content slider-wrapper">
+      <div class="cart-slider" id="cart-slider">
 
-      <div class="modal-header">
-        <h2>Your Cart</h2>
-        <span id="close-modal-x" class="close-icon">&times;</span>
-      </div>
+        <div class="cart-panel" id="panel-items">
+          <div class="modal-header">
+            <h2>Your Cart</h2>
+            <span id="close-modal-x" class="close-icon">&times;</span>
+          </div>
+          <div class="table-head">
+            <span>Item</span>
+            <span>Total</span>
+          </div>
+          <ul id="cart-items"></ul>
+          <p id="cart-total"></p>
+          <div class="modal-actions">
+            <button id="clear-cart-btn" class="danger-btn">🗑️ Clear</button>
+            <button id="go-to-info-btn" style="background: #333; color: white;">Next ➔</button>
+          </div>
+        </div>
 
-      <div
-        style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-weight: bold; font-size: 0.9rem; color: #666;">
-        <span>Item</span>
-        <span>Total</span>
-      </div>
+        <div class="cart-panel" id="panel-info">
+          <div class="modal-header">
+            <span id="back-to-items" style="cursor:pointer; font-size: 20px;">⬅</span>
+            <h2>Details</h2>
+            <span></span>
+          </div>
+          <div class="customer-inputs extended">
+            <input type="text" id="customer-name" placeholder="Full Name" />
+            <input type="tel" id="customer-phone" placeholder="Phone Number" />
+            <input type="email" id="customer-email" placeholder="Email Address" />
+            <textarea id="customer-address" placeholder="Delivery Address" rows="2"></textarea>
+            <input type="text" id="customer-coupon" placeholder="Coupon Code" />
+          </div>
 
-      <ul id="cart-items"></ul>
+          <div class="receipt-share-box">
+            <p>Order Receipt Link:</p>
+            <div class="link-group">
+              <input type="text" id="receipt-url-display" readonly>
+              <button id="copy-link-btn" title="Copy"><i class="bi bi-copy"></i></button>
+            </div>
+          </div>
 
-      <p id="cart-total"></p>
+          <div class="modal-actions">
+            <button id="whatsapp-btn">🔗 Share Link</button>
+            <button id="place-order-btn" style="background: #ff6600; color: white;">🚀 Place Order</button>
+          </div>
+        </div>
 
-      <div class="customer-inputs">
-        <input type="text" id="customer-name" placeholder="Enter your Name" />
-        <input type="tel" id="customer-phone" placeholder="Enter Phone Number" />
-      </div>
-
-      <div class="modal-actions">
-        <button id="clear-cart-btn" class="danger-btn">🗑️ Clear</button>
-        <button id="whatsapp-btn">🚚 Order</button>
       </div>
     </div>
   </div>
