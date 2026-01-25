@@ -44,11 +44,15 @@
             <span>Total</span>
           </div>
           <ul id="cart-items"></ul>
-          <p id="cart-total"></p>
           <div class="modal-actions">
-            <button id="clear-cart-btn" class="danger-btn">🗑️ Clear</button>
-            <button id="go-to-info-btn" style="background: #333; color: white;">Next ➔</button>
+            <p id="cart-total">Total: ₹0</p>
+
+            <div class="cart-buttons">
+              <button id="clear-cart-btn" class="danger-btn">🗑️ Clear</button>
+              <button id="go-to-info-btn" style="background:#333;color:white;">Next ➔</button>
+            </div>
           </div>
+
         </div>
 
         <div class="cart-panel" id="panel-info">
@@ -65,7 +69,7 @@
             <input type="text" id="customer-coupon" placeholder="Coupon Code" />
           </div>
 
-          <div class="modal-actions">
+          <div class="modal-actions-order">
             <button id="whatsapp-btn">🔗 Share Link</button>
             <button id="place-order-btn" style="background: #ff6600; color: white;">🚀 Place Order</button>
           </div>
