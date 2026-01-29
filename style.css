@@ -90,9 +90,9 @@ main {
     padding: 10px;
     border-radius: 8px;
     /* Correct way to set a background image */
-    background-image: url('stikerbg.png'); 
     background-size: cover;
     background-position: center;
+    background-color: #e5e7e6;
 }
 
 .sticker-card h3 {
@@ -451,4 +451,3 @@ body:not(:hover)::-webkit-scrollbar-thumb {
 ::-webkit-scrollbar-thumb:hover {
     background-color: rgba(0,0,0,0.55);
 }
-
