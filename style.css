@@ -551,3 +551,62 @@ body:not(:hover)::-webkit-scrollbar-thumb {
 @media only screen and (max-width: 600px) {
     .prev, .next, .carousel-caption {font-size: 14px;}
 }
+
+/* --- CATEGORY SCROLL BAR (Add to bottom of style.css) --- */
+.category-scroll-container {
+    display: flex;             /* This makes them sit side-by-side */
+    overflow-x: auto;          /* Enables horizontal scrolling */
+    gap: 20px;
+    padding: 20px;
+    background: transparent;
+    padding-bottom: 0;
+
+    /* --- CENTERING MAGIC STARTS HERE --- */
+    width: fit-content;        /* Shrinks the box to fit the icons */
+    max-width: 100%;           /* Prevents it from going off-screen on mobile */
+    margin: 0 auto;            /* Centers the container horizontally */
+    /* ----------------------------------- */
+
+    /* Hide scrollbar for clean look */
+    scrollbar-width: none;     /* Firefox */
+    -ms-overflow-style: none;  /* IE/Edge */
+}
+
+/* Hide scrollbar for Chrome/Safari */
+.category-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    min-width: 80px;           /* Prevents squishing */
+    transition: transform 0.2s;
+}
+
+.category-item:hover {
+    transform: translateY(-5px);
+}
+
+.cat-icon {
+    width: 60px;               /* Fixed width */
+    height: 60px;              /* Fixed height */
+    border-radius: 50%;        /* MAKES IT CIRCULAR */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.category-item span {
+    font-size: 12px;
+    font-weight: 500;
+    color: #555;
+    text-align: center;
+    white-space: nowrap;
+}

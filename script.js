@@ -323,3 +323,47 @@ function resetTimer() {
         plusSlides(1);
     }, 3000);
 }
+
+// --- NEW FILTER FUNCTION ---
+function filterProducts(category) {
+    const grid = document.getElementById("sticker-grid");
+    grid.innerHTML = ""; // Clear current grid
+
+    let filteredItems;
+
+    if (category === 'all') {
+        filteredItems = products;
+    } else {
+        filteredItems = products.filter(p => {
+            // Check if category is a list (Array)
+            if (Array.isArray(p.category)) {
+                return p.category.includes(category);
+            }
+            // Check if category is a single text (Old way)
+            return p.category === category;
+        });
+    }
+
+    // --- CHECK FOR "COMING SOON" ---
+    if (filteredItems.length === 0) {
+        grid.innerHTML = `
+            <div style="grid-column: 1/-1; text-align: center; padding: 4rem 1rem;">
+                <i class="bi bi-hourglass-split" style="font-size: 3rem; color: #ccc;"></i>
+                <h3 style="margin-top: 1rem; color: #555;">Coming Soon!</h3>
+                <p style="color: #888;">We are curating the best designs for this section.</p>
+            </div>
+        `;
+        return;
+    }
+
+    // Render items
+    filteredItems.forEach(p => {
+        grid.innerHTML += `
+        <div class="sticker-card" onclick="openPreview(${p.id})">
+            <img src="${p.image}">
+            <h3>${p.name}</h3>
+            <p class="price">₹${p.price}</p> 
+            <button onclick="event.stopPropagation(); addToCart(${p.id})">Add to Cart</button>
+        </div>`;
+    });
+}

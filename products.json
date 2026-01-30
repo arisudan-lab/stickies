@@ -3,390 +3,455 @@
         "id": 41,
         "name": "Red Heart",
         "image": "assets/41.png",
-        "price": 10
+        "price": 10,
+        "category": "chatpata-sticker"
     },
     {
         "id": 42,
         "name": "Fingerprint Heart",
         "image": "assets/42.png",
-        "price": 10
+        "price": 10,
+        "category": "chatpata-sticker"
     },
     {
         "id": 43,
         "name": "Olivia Rodrigo",
         "image": "assets/43.png",
-        "price": 10
+        "price": 10,
+        "category": "chatpata-sticker"
     },
     {
         "id": 44,
         "name": "Nirvana Angel",
         "image": "assets/44.png",
-        "price": 10
+        "price": 10,
+        "category": "chatpata-sticker"
     },
     {
         "id": 45,
         "name": "I Love NY",
         "image": "assets/45.png",
-        "price": 10
+        "price": 10,
+        "category": "chatpata-sticker"
     },
     {
         "id": 46,
         "name": "Marvel",
         "image": "assets/46.png",
-        "price": 10
+        "price": 10,
+        "category": "chatpata-sticker"
     },
     {
         "id": 47,
         "name": "Cassette Tape",
         "image": "assets/47.png",
-        "price": 10
+        "price": 10,
+        "category": "chatpata-sticker"
     },
     {
         "id": 48,
         "name": "Route 66",
         "image": "assets/48.png",
-        "price": 10
+        "price": 10,
+        "category": "chatpata-sticker"
     },
     {
         "id": 49,
         "name": "Frank Ocean Blond",
         "image": "assets/49.png",
-        "price": 10
+        "price": 10,
+        "category": "chatpata-sticker"
     },
     {
         "id": 50,
         "name": "Punk Rock",
         "image": "assets/50.png",
-        "price": 10
+        "price": 10,
+        "category": "chatpata-sticker"
     },
     {
         "id": 51,
         "name": "Vans Off The Wall",
         "image": "assets/51.png",
-        "price": 10
+        "price": 10,
+        "category": "chatpata-sticker"
     },
     {
         "id": 52,
         "name": "Keep Driving",
         "image": "assets/52.png",
-        "price": 10
+        "price": 10,
+        "category": "chatpata-sticker"
     },
     {
         "id": 53,
         "name": "Toyota Supra",
         "image": "assets/53.png",
-        "price": 10
+        "price": 10,
+        "category": "chatpata-sticker"
     },
     {
         "id": 54,
         "name": "TV Girl",
         "image": "assets/54.png",
-        "price": 10
+        "price": 10,
+        "category": "chatpata-sticker"
     },
     {
         "id": 55,
         "name": "Vivienne Westwood",
         "image": "assets/55.png",
-        "price": 10
+        "price": 10,
+        "category": "chatpata-sticker"
     },
     {
         "id": 56,
         "name": "Vintage Poster",
         "image": "assets/56.png",
-        "price": 10
+        "price": 10,
+        "category": "chatpata-sticker"
     },
     {
         "id": 57,
         "name": "Formula 1",
         "image": "assets/57.png",
-        "price": 10
+        "price": 10,
+        "category": ["cars", "men", "sports"]
     },
     {
         "id": 58,
         "name": "Parental Advisory",
         "image": "assets/58.png",
-        "price": 10
+        "price": 10,
+        "category": "chatpata-sticker"
     },
     {
         "id": 59,
         "name": "Cinema Ticket",
         "image": "assets/59.png",
-        "price": 10
+        "price": 10,
+        "category": "chatpata-sticker"
     },
     {
         "id": 60,
         "name": "Memories",
         "image": "assets/60.png",
-        "price": 10
+        "price": 10,
+        "category": "chatpata-sticker"
     },
     {
         "id": 61,
         "name": "Inspirational Quote",
         "image": "assets/61.png",
-        "price": 10
+        "price": 10,
+        "category": "chatpata-sticker"
     },
     {
         "id": 62,
         "name": "Arctic Monkeys",
         "image": "assets/62.png",
-        "price": 10
+        "price": 10,
+        "category": "chatpata-sticker"
     },
     {
         "id": 63,
         "name": "Taylor Swift",
         "image": "assets/63.png",
-        "price": 10
+        "price": 10,
+        "category": "chatpata-sticker"
     },
     {
         "id": 64,
         "name": "Disco Ball",
         "image": "assets/64.png",
-        "price": 10
+        "price": 10,
+        "category": "chatpata-sticker"
     },
     {
         "id": 65,
         "name": "Nirvana Smiley",
         "image": "assets/65.png",
-        "price": 10
+        "price": 10,
+        "category": "chatpata-sticker"
     },
     {
         "id": 66,
         "name": "Converse All Star",
         "image": "assets/66.png",
-        "price": 10
+        "price": 10,
+        "category": "chatpata-sticker"
     },
     {
         "id": 19,
         "name": "Scratch",
         "image": "assets/19.png",
-        "price": 10
+        "price": 10,
+        "category": "tech"
     },
     {
         "id": 20,
         "name": "Kaggle",
         "image": "assets/20.png",
-        "price": 10
+        "price": 10,
+        "category": "tech"
     },
     {
         "id": 21,
         "name": "Keras",
         "image": "assets/21.png",
-        "price": 10
+        "price": 10,
+        "category": "tech"
     },
     {
         "id": 22,
         "name": "Git",
         "image": "assets/22.png",
-        "price": 10
+        "price": 10,
+        "category": "tech"
     },
     {
         "id": 23,
         "name": "Git Branch",
         "image": "assets/23.png",
-        "price": 10
+        "price": 10,
+        "category": "tech"
     },
     {
         "id": 24,
         "name": "GitHub",
         "image": "assets/24.png",
-        "price": 10
+        "price": 10,
+        "category": "tech"
     },
     {
         "id": 25,
         "name": "Node.js",
         "image": "assets/25.png",
-        "price": 10
+        "price": 10,
+        "category": "tech"
     },
     {
         "id": 26,
         "name": "Docker",
         "image": "assets/26.png",
-        "price": 10
+        "price": 10,
+        "category": "tech"
     },
     {
         "id": 27,
         "name": "GitLab",
         "image": "assets/27.png",
-        "price": 10
+        "price": 10,
+        "category": "tech"
     },
     {
         "id": 28,
         "name": "GitHub Octocat",
         "image": "assets/28.png",
-        "price": 10
+        "price": 10,
+        "category": "tech"
     },
     {
         "id": 29,
         "name": "Oops!",
         "image": "assets/29.png",
-        "price": 10
+        "price": 10,
+        "category": "tech"
     },
     {
         "id": 30,
         "name": "Django",
         "image": "assets/30.png",
-        "price": 10
+        "price": 10,
+        "category": "tech"
     },
     {
         "id": 31,
         "name": "MySQL",
         "image": "assets/31.png",
-        "price": 10
+        "price": 10,
+        "category": "tech"
     },
     {
         "id": 32,
         "name": "C++",
         "image": "assets/32.png",
-        "price": 10
+        "price": 10,
+        "category": "tech"
     },
     {
         "id": 33,
         "name": "PHP",
         "image": "assets/33.png",
-        "price": 10
+        "price": 10,
+        "category": "tech"
     },
     {
         "id": 34,
         "name": "C#",
         "image": "assets/34.png",
-        "price": 10
+        "price": 10,
+        "category": "tech"
     },
     {
         "id": 35,
         "name": "C",
         "image": "assets/35.png",
-        "price": 10
+        "price": 10,
+        "category": "tech"
     },
     {
         "id": 36,
         "name": "Sometimes I Might",
         "image": "assets/36.png",
-        "price": 10
+        "price": 10,
+        "category": "chatpata-sticker"
     },
     {
         "id": 37,
         "name": "Git Committed",
         "image": "assets/37.png",
-        "price": 10
+        "price": 10,
+        "category": "tech"
     },
     {
         "id": 38,
         "name": "How to fly",
         "image": "assets/38.png",
-        "price": 10
+        "price": 10,
+        "category": "chatpata-sticker"
     },
     {
         "id": 39,
         "name": "Ship Happens",
         "image": "assets/39.png",
-        "price": 10
+        "price": 10,
+        "category": "tech"
     },
     {
         "id": 1,
         "name": "Manchester City",
         "image": "assets/1.png",
-        "price": 11
+        "price": 11,
+        "category": "sports"
     },
     {
         "id": 2,
-        "name": "Argentina National ",
+        "name": "Argentina National",
         "image": "assets/2.png",
-        "price": 11
+        "price": 11,
+        "category": "sports"
     },
     {
         "id": 3,
-        "name": "Portugal National ",
+        "name": "Portugal National",
         "image": "assets/3.png",
-        "price": 11
+        "price": 11,
+        "category": "sports"
     },
     {
         "id": 4,
         "name": "Tottenham Hotspur",
         "image": "assets/4.png",
-        "price": 11
+        "price": 11,
+        "category": "sports"
     },
     {
         "id": 5,
         "name": "Bayern Munich",
         "image": "assets/5.png",
-        "price": 11
+        "price": 11,
+        "category": "sports"
     },
     {
         "id": 6,
-        "name": "Brazil National ",
+        "name": "Brazil National",
         "image": "assets/6.png",
-        "price": 11
+        "price": 11,
+        "category": "sports"
     },
     {
         "id": 7,
         "name": "Bayer Leverkusen",
         "image": "assets/7.png",
-        "price": 11
+        "price": 11,
+        "category": "sports"
     },
     {
         "id": 8,
         "name": "Champions League",
         "image": "assets/8.png",
-        "price": 11
+        "price": 11,
+        "category": "sports"
     },
     {
         "id": 9,
         "name": "Colombia National",
         "image": "assets/9.png",
-        "price": 11
+        "price": 11,
+        "category": "sports"
     },
     {
         "id": 10,
         "name": "Paris Saint-Germain",
         "image": "assets/10.png",
-        "price": 11
+        "price": 11,
+        "category": "sports"
     },
     {
         "id": 11,
         "name": "Real Madrid",
         "image": "assets/11.png",
-        "price": 11
+        "price": 11,
+        "category": "sports"
     },
     {
         "id": 12,
         "name": "Sporting CP",
         "image": "assets/12.png",
-        "price": 11
+        "price": 11,
+        "category": "sports"
     },
     {
         "id": 13,
         "name": "Manchester United",
         "image": "assets/13.png",
-        "price": 11
+        "price": 11,
+        "category": "sports"
     },
     {
         "id": 14,
         "name": "Chelsea",
         "image": "assets/14.png",
-        "price": 11
+        "price": 11,
+        "category": "sports"
     },
     {
         "id": 15,
         "name": "Arsenal",
         "image": "assets/15.png",
-        "price": 11
+        "price": 11,
+        "category": "sports"
     },
     {
         "id": 16,
         "name": "Liverpool",
         "image": "assets/16.png",
-        "price": 11
+        "price": 11,
+        "category": "sports"
     },
     {
         "id": 17,
         "name": "Juventus",
         "image": "assets/17.png",
-        "price": 11
+        "price": 11,
+        "category": "sports"
     },
     {
         "id": 18,
         "name": "FC Barcelona",
         "image": "assets/18.png",
-        "price": 11
+        "price": 11,
+        "category": "sports"
     }
 ]
