@@ -277,3 +277,49 @@ document.getElementById("clear-cart-btn").onclick = () => {
         renderCart();
     }
 };
+
+
+// --- CAROUSEL LOGIC ---
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Auto-scroll every 5 seconds
+let slideInterval = setInterval(() => {
+    plusSlides(1);
+}, 5000); 
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+    resetTimer(); // Resets timer so it doesn't jump immediately after a click
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+    resetTimer();
+}
+
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("carousel-slide");
+    let dots = document.getElementsByClassName("dot");
+    
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+}
+
+function resetTimer() {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(() => {
+        plusSlides(1);
+    }, 3000);
+}

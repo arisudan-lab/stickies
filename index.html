@@ -26,6 +26,28 @@
     <button id="cart-btn">🛒 Cart (<span id="cart-count">0</span>)</button>
   </header>
 
+
+
+  <div class="carousel-container">
+    <div class="carousel-slide fade">
+      <img src="https://placehold.co/1584x396/ff6600/white?text=Welcome+to+Stikies&font=roboto" alt="Banner 1">
+      <div class="carousel-caption">Welcome to Stikies</div>
+    </div>
+
+    <div class="carousel-slide fade">
+      <img src="https://placehold.co/1584x396/333/white?text=New+Drops+Every+Week&font=roboto" alt="Banner 2">
+      <div class="carousel-caption">New Drops Every Week</div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="dots-container">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+    </div>
+  </div>
+
   <main>
     <div class="sticker-grid" id="sticker-grid"></div>
   </main>
