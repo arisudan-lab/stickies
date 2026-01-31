@@ -36,14 +36,18 @@ header {
 }
 
 .logo-container svg {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
     color: #ff6600;
 }
 
 header h1 {
-    font-size: 1.5rem;
+    font-size: 25px ;
     color: #ff6600;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0.7px;
 }
 
 #cart-btn {
