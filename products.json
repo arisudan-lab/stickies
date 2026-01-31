@@ -116,7 +116,11 @@
         "name": "Formula 1",
         "image": "assets/57.png",
         "price": 10,
-        "category": ["cars", "men", "sports"]
+        "category": [
+            "cars",
+            "men",
+            "sports"
+        ]
     },
     {
         "id": 58,
@@ -182,276 +186,388 @@
         "category": "chatpata-sticker"
     },
     {
-        "id": 19,
-        "name": "Scratch",
-        "image": "assets/19.png",
-        "price": 10,
-        "category": "tech"
+        "id": 67,
+        "name": "Demogorgon Sketch",
+        "image": "assets/67.png",
+        "price": 15,
+        "category": "web-series"
     },
     {
-        "id": 20,
-        "name": "Kaggle",
-        "image": "assets/20.png",
-        "price": 10,
-        "category": "tech"
+        "id": 68,
+        "name": "Hawkins Newspaper",
+        "image": "assets/68.png",
+        "price": 15,
+        "category": "web-series"
     },
     {
-        "id": 21,
-        "name": "Keras",
-        "image": "assets/21.png",
-        "price": 10,
-        "category": "tech"
+        "id": 69,
+        "name": "The Mind Flayer",
+        "image": "assets/69.png",
+        "price": 15,
+        "category": "web-series"
     },
     {
-        "id": 22,
-        "name": "Git",
-        "image": "assets/22.png",
-        "price": 10,
-        "category": "tech"
+        "id": 70,
+        "name": "Eleven Profile",
+        "image": "assets/70.png",
+        "price": 15,
+        "category": "web-series"
     },
     {
-        "id": 23,
-        "name": "Git Branch",
-        "image": "assets/23.png",
-        "price": 10,
-        "category": "tech"
+        "id": 71,
+        "name": "Ghostbusters Gang",
+        "image": "assets/71.png",
+        "price": 15,
+        "category": "web-series"
     },
     {
-        "id": 24,
-        "name": "GitHub",
-        "image": "assets/24.png",
-        "price": 10,
-        "category": "tech"
+        "id": 72,
+        "name": "Hellfire Club",
+        "image": "assets/72.png",
+        "price": 15,
+        "category": "web-series"
     },
     {
-        "id": 25,
-        "name": "Node.js",
-        "image": "assets/25.png",
-        "price": 10,
-        "category": "tech"
+        "id": 73,
+        "name": "Welcome to Hawkins",
+        "image": "assets/73.png",
+        "price": 15,
+        "category": "web-series"
     },
     {
-        "id": 26,
-        "name": "Docker",
-        "image": "assets/26.png",
-        "price": 10,
-        "category": "tech"
+        "id": 74,
+        "name": "Alphabet Wall",
+        "image": "assets/74.png",
+        "price": 15,
+        "category": "web-series"
     },
     {
-        "id": 27,
-        "name": "GitLab",
-        "image": "assets/27.png",
-        "price": 10,
-        "category": "tech"
+        "id": 75,
+        "name": "Demogorgon Face",
+        "image": "assets/75.png",
+        "price": 15,
+        "category": "web-series"
     },
     {
-        "id": 28,
-        "name": "GitHub Octocat",
-        "image": "assets/28.png",
-        "price": 10,
-        "category": "tech"
+        "id": 76,
+        "name": "Stranger Things Logo",
+        "image": "assets/76.png",
+        "price": 15,
+        "category": "web-series"
     },
     {
-        "id": 29,
-        "name": "Oops!",
-        "image": "assets/29.png",
-        "price": 10,
-        "category": "tech"
+        "id": 77,
+        "name": "Scoops Ahoy",
+        "image": "assets/77.png",
+        "price": 15,
+        "category": "web-series"
     },
     {
-        "id": 30,
-        "name": "Django",
-        "image": "assets/30.png",
-        "price": 10,
-        "category": "tech"
+        "id": 78,
+        "name": "Steve's Bat",
+        "image": "assets/78.png",
+        "price": 15,
+        "category": "web-series"
     },
     {
-        "id": 31,
-        "name": "MySQL",
-        "image": "assets/31.png",
-        "price": 10,
-        "category": "tech"
+        "id": 79,
+        "name": "011 Tattoo",
+        "image": "assets/79.png",
+        "price": 15,
+        "category": "web-series"
     },
     {
-        "id": 32,
-        "name": "C++",
-        "image": "assets/32.png",
-        "price": 10,
-        "category": "tech"
-    },
-    {
-        "id": 33,
-        "name": "PHP",
-        "image": "assets/33.png",
-        "price": 10,
-        "category": "tech"
-    },
-    {
-        "id": 34,
-        "name": "C#",
-        "image": "assets/34.png",
-        "price": 10,
-        "category": "tech"
-    },
-    {
-        "id": 35,
-        "name": "C",
-        "image": "assets/35.png",
-        "price": 10,
-        "category": "tech"
-    },
-    {
-        "id": 36,
-        "name": "Sometimes I Might",
-        "image": "assets/36.png",
-        "price": 10,
+        "id": 80,
+        "name": "Vinyl Record",
+        "image": "assets/80.png",
+        "price": 15,
         "category": "chatpata-sticker"
     },
     {
-        "id": 37,
-        "name": "Git Committed",
-        "image": "assets/37.png",
-        "price": 10,
-        "category": "tech"
+        "id": 81,
+        "name": "Eddie's Guitar",
+        "image": "assets/81.png",
+        "price": 15,
+        "category": "web-series"
     },
     {
-        "id": 38,
-        "name": "How to fly",
-        "image": "assets/38.png",
-        "price": 10,
-        "category": "chatpata-sticker"
+        "id": 82,
+        "name": "Mind Flayer Sketch",
+        "image": "assets/82.png",
+        "price": 15,
+        "category": "web-series"
     },
     {
-        "id": 39,
-        "name": "Ship Happens",
-        "image": "assets/39.png",
-        "price": 10,
-        "category": "tech"
-    },
-    {
-        "id": 1,
-        "name": "Manchester City",
-        "image": "assets/1.png",
-        "price": 11,
-        "category": "sports"
-    },
-    {
-        "id": 2,
-        "name": "Argentina National",
-        "image": "assets/2.png",
-        "price": 11,
-        "category": "sports"
-    },
-    {
-        "id": 3,
-        "name": "Portugal National",
-        "image": "assets/3.png",
-        "price": 11,
-        "category": "sports"
-    },
-    {
-        "id": 4,
-        "name": "Tottenham Hotspur",
-        "image": "assets/4.png",
-        "price": 11,
-        "category": "sports"
-    },
-    {
-        "id": 5,
-        "name": "Bayern Munich",
-        "image": "assets/5.png",
-        "price": 11,
-        "category": "sports"
-    },
-    {
-        "id": 6,
-        "name": "Brazil National",
-        "image": "assets/6.png",
-        "price": 11,
-        "category": "sports"
-    },
-    {
-        "id": 7,
-        "name": "Bayer Leverkusen",
-        "image": "assets/7.png",
-        "price": 11,
-        "category": "sports"
-    },
-    {
-        "id": 8,
-        "name": "Champions League",
-        "image": "assets/8.png",
-        "price": 11,
-        "category": "sports"
-    },
-    {
-        "id": 9,
-        "name": "Colombia National",
-        "image": "assets/9.png",
-        "price": 11,
-        "category": "sports"
-    },
-    {
-        "id": 10,
-        "name": "Paris Saint-Germain",
-        "image": "assets/10.png",
-        "price": 11,
-        "category": "sports"
-    },
-    {
-        "id": 11,
-        "name": "Real Madrid",
-        "image": "assets/11.png",
-        "price": 11,
-        "category": "sports"
-    },
-    {
-        "id": 12,
-        "name": "Sporting CP",
-        "image": "assets/12.png",
-        "price": 11,
-        "category": "sports"
-    },
-    {
-        "id": 13,
-        "name": "Manchester United",
-        "image": "assets/13.png",
-        "price": 11,
-        "category": "sports"
-    },
-    {
-        "id": 14,
-        "name": "Chelsea",
-        "image": "assets/14.png",
-        "price": 11,
-        "category": "sports"
-    },
-    {
-        "id": 15,
-        "name": "Arsenal",
-        "image": "assets/15.png",
-        "price": 11,
-        "category": "sports"
-    },
-    {
-        "id": 16,
-        "name": "Liverpool",
-        "image": "assets/16.png",
-        "price": 11,
-        "category": "sports"
-    },
-    {
-        "id": 17,
-        "name": "Juventus",
-        "image": "assets/17.png",
-        "price": 11,
-        "category": "sports"
-    },
-    {
-        "id": 18,
-        "name": "FC Barcelona",
-        "image": "assets/18.png",
-        "price": 11,
-        "category": "sports"
-    }
+    "id": 19,
+    "name": "Scratch",
+    "image": "assets/19.png",
+    "price": 10,
+    "category": "tech"
+},
+{
+    "id": 20,
+    "name": "Kaggle",
+    "image": "assets/20.png",
+    "price": 10,
+    "category": "tech"
+},
+{
+    "id": 21,
+    "name": "Keras",
+    "image": "assets/21.png",
+    "price": 10,
+    "category": "tech"
+},
+{
+    "id": 22,
+    "name": "Git",
+    "image": "assets/22.png",
+    "price": 10,
+    "category": "tech"
+},
+{
+    "id": 23,
+    "name": "Git Branch",
+    "image": "assets/23.png",
+    "price": 10,
+    "category": "tech"
+},
+{
+    "id": 24,
+    "name": "GitHub",
+    "image": "assets/24.png",
+    "price": 10,
+    "category": "tech"
+},
+{
+    "id": 25,
+    "name": "Node.js",
+    "image": "assets/25.png",
+    "price": 10,
+    "category": "tech"
+},
+{
+    "id": 26,
+    "name": "Docker",
+    "image": "assets/26.png",
+    "price": 10,
+    "category": "tech"
+},
+{
+    "id": 27,
+    "name": "GitLab",
+    "image": "assets/27.png",
+    "price": 10,
+    "category": "tech"
+},
+{
+    "id": 28,
+    "name": "GitHub Octocat",
+    "image": "assets/28.png",
+    "price": 10,
+    "category": "tech"
+},
+{
+    "id": 29,
+    "name": "Oops!",
+    "image": "assets/29.png",
+    "price": 10,
+    "category": "tech"
+},
+{
+    "id": 30,
+    "name": "Django",
+    "image": "assets/30.png",
+    "price": 10,
+    "category": "tech"
+},
+{
+    "id": 31,
+    "name": "MySQL",
+    "image": "assets/31.png",
+    "price": 10,
+    "category": "tech"
+},
+{
+    "id": 32,
+    "name": "C++",
+    "image": "assets/32.png",
+    "price": 10,
+    "category": "tech"
+},
+{
+    "id": 33,
+    "name": "PHP",
+    "image": "assets/33.png",
+    "price": 10,
+    "category": "tech"
+},
+{
+    "id": 34,
+    "name": "C#",
+    "image": "assets/34.png",
+    "price": 10,
+    "category": "tech"
+},
+{
+    "id": 35,
+    "name": "C",
+    "image": "assets/35.png",
+    "price": 10,
+    "category": "tech"
+},
+{
+    "id": 36,
+    "name": "Sometimes I Might",
+    "image": "assets/36.png",
+    "price": 10,
+    "category": "chatpata-sticker"
+},
+{
+    "id": 37,
+    "name": "Git Committed",
+    "image": "assets/37.png",
+    "price": 10,
+    "category": "tech"
+},
+{
+    "id": 38,
+    "name": "How to fly",
+    "image": "assets/38.png",
+    "price": 10,
+    "category": "chatpata-sticker"
+},
+{
+    "id": 39,
+    "name": "Ship Happens",
+    "image": "assets/39.png",
+    "price": 10,
+    "category": "tech"
+},
+{
+    "id": 1,
+    "name": "Manchester City",
+    "image": "assets/1.png",
+    "price": 11,
+    "category": "sports"
+},
+{
+    "id": 2,
+    "name": "Argentina National",
+    "image": "assets/2.png",
+    "price": 11,
+    "category": "sports"
+},
+{
+    "id": 3,
+    "name": "Portugal National",
+    "image": "assets/3.png",
+    "price": 11,
+    "category": "sports"
+},
+{
+    "id": 4,
+    "name": "Tottenham Hotspur",
+    "image": "assets/4.png",
+    "price": 11,
+    "category": "sports"
+},
+{
+    "id": 5,
+    "name": "Bayern Munich",
+    "image": "assets/5.png",
+    "price": 11,
+    "category": "sports"
+},
+{
+    "id": 6,
+    "name": "Brazil National",
+    "image": "assets/6.png",
+    "price": 11,
+    "category": "sports"
+},
+{
+    "id": 7,
+    "name": "Bayer Leverkusen",
+    "image": "assets/7.png",
+    "price": 11,
+    "category": "sports"
+},
+{
+    "id": 8,
+    "name": "Champions League",
+    "image": "assets/8.png",
+    "price": 11,
+    "category": "sports"
+},
+{
+    "id": 9,
+    "name": "Colombia National",
+    "image": "assets/9.png",
+    "price": 11,
+    "category": "sports"
+},
+{
+    "id": 10,
+    "name": "Paris Saint-Germain",
+    "image": "assets/10.png",
+    "price": 11,
+    "category": "sports"
+},
+{
+    "id": 11,
+    "name": "Real Madrid",
+    "image": "assets/11.png",
+    "price": 11,
+    "category": "sports"
+},
+{
+    "id": 15,
+    "name": "Sporting CP",
+    "image": "assets/15.png",
+    "price": 11,
+    "category": "sports"
+},
+{
+    "id": 13,
+    "name": "Manchester United",
+    "image": "assets/13.png",
+    "price": 11,
+    "category": "sports"
+},
+{
+    "id": 14,
+    "name": "Chelsea",
+    "image": "assets/14.png",
+    "price": 11,
+    "category": "sports"
+},
+{
+    "id": 15,
+    "name": "Arsenal",
+    "image": "assets/15.png",
+    "price": 11,
+    "category": "sports"
+},
+{
+    "id": 16,
+    "name": "Liverpool",
+    "image": "assets/16.png",
+    "price": 11,
+    "category": "sports"
+},
+{
+    "id": 17,
+    "name": "Juventus",
+    "image": "assets/17.png",
+    "price": 11,
+    "category": "sports"
+},
+{
+    "id": 18,
+    "name": "FC Barcelona",
+    "image": "assets/18.png",
+    "price": 11,
+    "category": "sports"
+}
 ]
