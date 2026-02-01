@@ -264,7 +264,6 @@ main {
 /* MOBILE */
 @media (max-width: 600px) {
     header {
-        flex-direction: column;
         gap: 1rem;
     }
 
