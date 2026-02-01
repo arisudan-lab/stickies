@@ -367,3 +367,13 @@ function filterProducts(category) {
         </div>`;
     });
 }
+
+function scrollCategory(direction) {
+    const container = document.getElementById("categoryScroll");
+    const scrollAmount = 120; // px per click
+
+    container.scrollBy({
+        left: direction * scrollAmount,
+        behavior: "smooth"
+    });
+}

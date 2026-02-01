@@ -613,3 +613,48 @@ body:not(:hover)::-webkit-scrollbar-thumb {
     text-align: center;
     white-space: nowrap;
 }
+
+.category-scroll-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* arrows */
+.cat-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.9);
+    border: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: none; /* hidden by default */
+}
+
+.cat-arrow i {
+    font-size: 18px;
+    color: #333;
+}
+
+.cat-arrow.left {
+    left: -10px;
+}
+
+.cat-arrow.right {
+    right: -10px;
+}
+
+/* show arrows only on mobile */
+@media (max-width: 768px) {
+    .cat-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
